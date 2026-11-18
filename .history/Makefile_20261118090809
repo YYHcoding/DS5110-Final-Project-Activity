@@ -1,0 +1,15 @@
+SNAPSHOTS := 2026-06-15 2026-09-19
+FILES     := data/listings.csv.gz data/calendar.csv.gz data/reviews.csv.gz visualisations/neighbourhoods.geojson
+PORTAL    := https://data.insideairbnb.com/united-states/ma/boston
+REPO      := YYHcoding/DS5110-Final-Project-Activity
+RELEASE   := data-v1
+
+.PHONY: data
+data:
+	@for s in $(SNAPSHOTS); do for f in $(FILES); do \
+	  n=$$(basename $$f); mkdir -p data/raw/$$s; \
+	  curl -fsSL -o data/raw/$$s/$$n $(PORTAL)/$$s/$$f \
+	  || gh release download $(RELEASE) --repo $(REPO) -p "$${s}_$$n" -O data/raw/$$s/$$n --clobber \
+	  || { echo "ERROR: could not download $$s/$$n"; exit 1; }; \
+	done; done
+	cd data/raw && shasum -a 256 -c ../../MANIFEST.sha256
