@@ -7,6 +7,10 @@
   shows are not in the files.
 - Our copy: `make data` downloads from the Inside Airbnb portal. If a file is no longer
   there, it falls back to the copy attached to our GitHub release.
+- Column definitions: Inside Airbnb data dictionary,
+  https://docs.google.com/spreadsheets/d/1iWCNJcSutYqpULSQHlNyGInUvHg2BoUGoNRIGa6Szc4/
+  It describes listings.csv only (version 4.3, August 2022), so we check it against the
+  real columns in each snapshot.
 
 ## Snapshots
 - Build: 2026-06-15, used to develop the analysis
