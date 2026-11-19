@@ -29,3 +29,4 @@ Contributions — Milestone 1: Proposal
 ## AI use
 
 - Niranjan: the data card content is my own work. I used Claude (Anthropic) as an assistant for three specific tasks: wording one line of the data card (the data dictionary reference), running the fresh-clone `make data` test, and first drafts of my review comments and of this README update. I read, corrected, and approved each one before it was committed or posted.
+- Christoph: I used Claude to help me brainstorm what an ideal file structure could look like for the repository. I also used Claude to help me correct a few minor errors that I encountered when writing the makefile. Finally, I used Claude to help guide me through generating MANIFEST.sha256. I read and verified everything that Claude helped me with. 
